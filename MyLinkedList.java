@@ -22,9 +22,11 @@ public class MyLinkedList {
 		}
 	}
 
-	public INode pop() {
+	public INode popLast() {
 		INode tempNode = this.head;
-		this.head = head.getNext();
+		while (tempNode.getNext().getNext() != null)
+			tempNode = tempNode.getNext();
+		tempNode.setNext(null);
 		return tempNode;
 	}
 

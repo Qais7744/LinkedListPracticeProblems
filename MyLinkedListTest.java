@@ -17,6 +17,5 @@ public class MyLinkedListTest {
 		INode getNode = myLinkedList.search();
 		System.out.println("Search key is :" + " " + getNode.getKey());
 		myLinkedList.printMyNodes();
-		System.out.println();
 	}
 }

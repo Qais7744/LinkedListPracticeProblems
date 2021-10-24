@@ -6,23 +6,23 @@ import org.junit.Test;
 public class MyLinkedListTest {
 
 	@Test
-	public void given3NumbersWhenInsertingNewNodeAfterSecondInBetweenShouldPassLinkedListResult() {
-		MyNode<Integer> myFirstNode = new MyNode<>(56);
+	public void giveElementInsertNewNodeAfterKeyNodeShouldPassLinkedListResult() {
+		MyNode<Integer> myFirstNode = new MyNode<>(70);
 		MyNode<Integer> mySecondNode = new MyNode<>(30);
-		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyNode<Integer> myThirdNode = new MyNode<>(56);
 		MyLinkedList myLinkedList = new MyLinkedList();
-		myLinkedList.add(myThirdNode);
-		myLinkedList.add(mySecondNode);
 		myLinkedList.add(myFirstNode);
+		myLinkedList.add(mySecondNode);
+		myLinkedList.add(myThirdNode);
 		INode getNode = myLinkedList.search();
-		System.out.println("Search key is :" + " " + getNode.getKey());
 		MyNode<Integer> newNode = new MyNode<>(40);
 		myLinkedList.insert(getNode, newNode);
-		System.out.println("Insert 40 value");
+		myLinkedList.deleteInbetween(getNode,myFirstNode);
 		myLinkedList.printMyNodes();
-		boolean result = myLinkedList.head.equals(myFirstNode) &&
+		myLinkedList.size();
+		boolean result = myLinkedList.head.equals(myThirdNode) &&
 						 myLinkedList.head.getNext().equals(mySecondNode) &&
-						 myLinkedList.tail.equals(myThirdNode);
+						 myLinkedList.tail.equals(myFirstNode);
 		Assert.assertTrue(result);
 	}
 }

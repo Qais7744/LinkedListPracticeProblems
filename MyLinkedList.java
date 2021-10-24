@@ -21,7 +21,7 @@ public class MyLinkedList {
 			this.head.setNext(tempNode);
 		}
 	}
-	
+
 	public void insert(INode myNode, INode newNode) {
 		INode tempNode = myNode.getNext();
 		myNode.setNext(newNode);
@@ -34,6 +34,22 @@ public class MyLinkedList {
 			tempNode = tempNode.getNext();
 		}
 		return tempNode;
+	}
+
+	public void deleteInbetween(INode getNode, INode setNode) {
+		INode temp = this.head;
+		getNode.setNext(setNode);
+	}
+
+	public void size() {
+		int i = 0;
+		final int ONE = 1;
+		INode temp = this.head;
+		while (temp.getNext() != null) {
+			temp = temp.getNext();
+			i++;
+		}
+		System.out.println("Number of Nodes is: " + (i + ONE));
 	}
 
 	public void printMyNodes() {
